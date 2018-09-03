@@ -13,9 +13,11 @@ Vagrant.require_version ">= 1.7"
 required_plugins = ['vagrant-hostmanager', 'vagrant-triggers']
 required_plugins = ['vagrant-hostmanager'] if Gem::Version.new(Vagrant::VERSION) >= Gem::Version.new('2.1.0')
 
-required_plugins.each do |plugin|
-  if !Vagrant.has_plugin?(plugin)
-    abort("Plugin '#{plugin}' not found. Please install it using 'vagrant plugin install #{plugin}'.")
+if Gem::Version.new(Vagrant::VERSION) < Gem::Version.new("2.1.3")
+  required_plugins.each do |plugin|
+    if !Vagrant.has_plugin?(plugin)
+      abort("Plugin '#{plugin}' not found. Please install it using 'vagrant plugin install #{plugin}'.")
+    end
   end
 end
 
@@ -78,6 +80,10 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  if Gem::Version.new(Vagrant::VERSION) >= Gem::Version.new("2.1.3")
+    config.vagrant.plugins = required_plugins
+  end
+  
   if Vagrant.has_plugin?('vagrant-hostmanager')
     config.hostmanager.enabled = true
     config.hostmanager.manage_host = true
