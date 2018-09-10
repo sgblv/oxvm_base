@@ -1,0 +1,17 @@
+---
+- name: Uninstall Doxygen and required packages
+  become: yes
+  apt: pkg={{ item }} state=absent
+  with_items:
+  - doxygen
+  - flex
+  - bison
+  - make
+  - cmake
+  - graphviz
+  - build-essential
+
+- name: Remove dependencies that are no longer required
+  become: yes
+  apt:
+    autoremove: yes

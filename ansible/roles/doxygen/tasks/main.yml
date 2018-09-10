@@ -1,0 +1,10 @@
+---
+- include: install.yml
+  when: doxygen.install
+  tags:
+    - doxygen
+
+- include: uninstall.yml
+  when: not doxygen.install
+  tags:
+    - doxygen

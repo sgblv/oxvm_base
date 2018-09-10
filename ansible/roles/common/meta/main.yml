@@ -16,3 +16,4 @@ dependencies:
   - java
   - elasticsearch
   - selenium
+  - doxygen

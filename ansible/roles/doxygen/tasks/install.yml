@@ -1,0 +1,12 @@
+---
+- name: Install Doxygen and required packages
+  become: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - doxygen
+  - flex
+  - bison
+  - make
+  - cmake
+  - graphviz
+  - build-essential

@@ -415,6 +415,18 @@ In order to disable it please use the following snippet:
       prestissimo:
         install: false
 
+Trigger Doxygen integration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Trigger `Doxygen <http://www.doxygen.nl/>`_ integration so that it can be
+used to automatically generate source code documentation.
+
+.. code:: yaml
+
+  ---
+  doxygen:
+    install: true
+
 .. [#personal_git_ignore] ``personal.yml`` configuration file is already included in ``.gitignore`` and should not be visible as changes to the actual repository.
 .. [#assets_repository] Repository with some already prebuilt versions of php for faster installation.
 .. [#list_of_providers] VM solutions from `VMWare <http://www.vmware.com/>`_, such as `workstation <http://www.vmware.com/products/workstation>`_ and `fusion <http://www.vmware.com/products/fusion>`_ were not yet adapted or tested with our current configuration of VM.
