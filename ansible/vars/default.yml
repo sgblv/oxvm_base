@@ -32,7 +32,8 @@ server:
   locale: en_US.UTF-8
   apt_mirror: http://de.archive.ubuntu.com/ubuntu/
   unattended_upgrade: false
-  packages: ~
+  packages:
+    - git
   personal_packages: ~
   forceless_umount_url: https://github.com/OXID-eSales/oxvm_assets/blob/master/umount?raw=true
 landing:
