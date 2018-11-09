@@ -241,6 +241,21 @@ access to gitlab composer repositories.
       gitlab_token: example_secret_token
       gitlab_url: example_url
 
+Define auth for composer repositories
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Provide HTTP auth for composer. e.G. to the oxid enterprise repository
+
+.. code:: yaml
+
+  ---
+  php:
+    composer:
+      http-basic:
+      - basic-url: enterprise-edition.packages.oxid-esales.com
+        username:<username>
+        password:<password>
+
 
 Change ubuntu repository mirror url
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

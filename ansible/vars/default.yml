@@ -74,6 +74,7 @@ php:
     github_token: ~
     gitlab_token: ~
     gitlab_url: ~
+    http_basic: ~
     prestissimo:
       install: false
   pecl_packages: ~
