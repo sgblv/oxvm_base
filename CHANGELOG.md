@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.1] - unreleased
+
+### Added
+- Config option for gitlab tokens [PR-23] (https://github.com/OXID-eSales/oxvm_base/pull/23)
+- Config option for http authentication [PR-23] (https://github.com/OXID-eSales/oxvm_base/pull/23)
+
+### Changed
+- Only uninstall doxygen when doxygen install is false
+
 ## [2.1.0] - 2018-09-13
 
 ### Added
@@ -53,6 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
+[2.1.1]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/OXID-eSales/oxvm_base/compare/v1.1.3...v2.0.0

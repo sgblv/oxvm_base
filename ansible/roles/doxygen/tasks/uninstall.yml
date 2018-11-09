@@ -4,12 +4,6 @@
   apt: pkg={{ item }} state=absent
   with_items:
   - doxygen
-  - flex
-  - bison
-  - make
-  - cmake
-  - graphviz
-  - build-essential
 
 - name: Remove dependencies that are no longer required
   become: yes
