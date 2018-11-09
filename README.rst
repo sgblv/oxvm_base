@@ -226,6 +226,22 @@ be removed [#github_token]_.
     composer:
       github_token: example_secret_token
 
+
+Define gitlab url and token for composer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Provide OAuth token from gitlab for composer so it can access git via https sources or
+access to gitlab composer repositories.
+
+.. code:: yaml
+
+  ---
+  php:
+    composer:
+      gitlab_token: example_secret_token
+      gitlab_url: example_url
+
+
 Change ubuntu repository mirror url
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -72,6 +72,8 @@ php:
     installer_url: https://getcomposer.org/installer
     install: '1'
     github_token: ~
+    gitlab_token: ~
+    gitlab_url: ~
     prestissimo:
       install: false
   pecl_packages: ~
