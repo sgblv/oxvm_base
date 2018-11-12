@@ -4,14 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.1.1] - unreleased
+## [2.1.1] - 2018-11-12
 
 ### Added
 - Config option for gitlab tokens [PR-23] (https://github.com/OXID-eSales/oxvm_base/pull/23)
 - Config option for http authentication [PR-23] (https://github.com/OXID-eSales/oxvm_base/pull/23)
 
 ### Changed
-- Only uninstall doxygen when doxygen install is false
+- Limit the doxygen uninstall action to just uninstall doxygen
 
 ## [2.1.0] - 2018-09-13
 
