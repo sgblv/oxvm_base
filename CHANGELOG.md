@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.2] - Unreleased
+
+### Changed
+- Remove exact version number from hirak/prestissimo requirement
+
 ## [2.1.1] - 2018-11-12
 
 ### Added
@@ -62,6 +67,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
+[2.1.2]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v2.0.0...v2.0.1
