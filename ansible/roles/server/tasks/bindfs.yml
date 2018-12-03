@@ -1,8 +1,8 @@
 - name: Install bindfs
   become: yes
   apt:
-    pkg: bindfs
-    state: latest
+    name: "bindfs"
+    state: present
 
 - name: Check placeholder for shared folder
   become: yes

@@ -9,12 +9,16 @@
 
 - name: "Install php {{ php.version }}"
   become: yes
-  apt: pkg="php{{ php.version }}" state=latest
+  apt:
+    name: "php{{ php.version }}"
+    state: present
 
 - name: Install PHP Packages
   become: yes
-  apt: pkg="php{{ php.version }}-{{ item }}" state=latest
-  with_items: "{{ php.packages }}"
+  apt:
+    name: "php{{ php.version }}-{{ item }}"
+    state: present
+  loop: "{{ php.packages }}"
   when: php.packages is defined
   notify:
     - restart apache

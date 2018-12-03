@@ -1,7 +1,9 @@
 ---
 - name: Install xDebug
   become: yes
-  apt: pkg="php{{ php.version }}-xdebug" state=latest
+  apt:
+    name: "php{{ php.version }}-xdebug"
+    state: present
 
 - name: Capture outgoing IP address
   shell: route | tail -n 1 | awk -F ' ' '{print $1}' | sed 's/\.0$/\.1/g'

@@ -8,5 +8,5 @@
 - name: Uninstall varnish
   become: yes
   apt:
-    name: varnish
+    name: "varnish"
     state: absent

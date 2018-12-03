@@ -1,7 +1,9 @@
 ---
 - name: Install Apache
   become: yes
-  apt: pkg=apache2 state=latest
+  apt:
+    name: "apache2"
+    state: present
 
 - name: Install Apache Modules
   become: yes

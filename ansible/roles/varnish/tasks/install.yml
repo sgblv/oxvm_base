@@ -2,8 +2,8 @@
 - name: Install https transport for apt
   become: yes
   apt:
-    name: apt-transport-https
-    state: latest
+    name: "apt-transport-https"
+    state: present
   when: varnish.repo.https
 
 - name: Include Varnish repository key
@@ -23,5 +23,5 @@
   become: yes
   apt:
     name: "{{ varnish.package_name }}"
-    state: latest
+    state: present
   register: varnish_install

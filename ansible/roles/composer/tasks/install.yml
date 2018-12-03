@@ -1,7 +1,7 @@
 - name: Install unzip
   become: yes
   apt:
-    name: unzip
+    name: "unzip"
     state: present
 
 - name: Download Composer installer

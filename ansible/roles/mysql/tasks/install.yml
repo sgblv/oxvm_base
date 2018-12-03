@@ -5,8 +5,11 @@
 
 - name: Install MySQL Packages
   become: yes
-  apt: pkg={{ item }} state=latest
-  with_items:
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
     - mysql-server
     - mysql-client
     - python-mysqldb

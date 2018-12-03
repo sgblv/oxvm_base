@@ -33,22 +33,27 @@
 
 - name: Install System Packages
   become: yes
-  apt: pkg={{ item }} state=latest
-  with_items:
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
     - curl
     - wget
     - python-software-properties
 
 - name: Install Extra Packages
   become: yes
-  apt: pkg={{ item }} state=latest
-  with_items: "{{ server.packages }}"
+  apt:
+    name: "{{ server.packages }}"
+    state: present
   when: server.packages
 
 - name: Install Extra personal Packages
   become: yes
-  apt: pkg={{ item }} state=latest
-  with_items: "{{ server.personal_packages }}"
+  apt:
+    name: "{{ server.personal_packages }}"
+    state: present
   when: server.personal_packages
 
 - name: Configure the timezone

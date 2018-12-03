@@ -1,7 +1,9 @@
 ---
   - name: Install firefox to get all dependencies
     become: yes
-    apt: name=firefox state=present
+    apt:
+      name: "firefox"
+      state: present
 
   - name: Download fixed firefox version
     get_url:
@@ -15,8 +17,11 @@
 
   - name: Install dependencies needed for selenium
     become: yes
-    apt: "name={{ item }} state=present"
-    with_items:
+    apt:
+      name: "{{ packages }}"
+      state: present
+    vars:
+      packages:
       - xfce4
       - xvfb
       - x11vnc
@@ -25,12 +30,14 @@
 
   - name: Remove systemd-services
     become: yes
-    apt: name=systemd-services state=absent
+    apt:
+      name: "systemd-services"
+      state: absent
 
   - name: Disable screensaver
     become: yes
     apt:
-      name: xscreensaver
+      name: "xscreensaver"
       state: absent
 
   - name: Prepare placeholder for selenium

@@ -1,9 +1,9 @@
 ---
 - name: Uninstall Doxygen and required packages
   become: yes
-  apt: pkg={{ item }} state=absent
-  with_items:
-  - doxygen
+  apt:
+    name: "doxygen"
+    state: absent
 
 - name: Remove dependencies that are no longer required
   become: yes
