@@ -35,12 +35,13 @@
   become: yes
   apt:
     name: "{{ packages }}"
-    state: present
+    state: latest
   vars:
     packages:
     - curl
     - wget
     - python-software-properties
+    - ca-certificates
 
 - name: Install Extra Packages
   become: yes
