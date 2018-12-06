@@ -12,7 +12,11 @@
 
 - name: Download the ZendGuard shared object files
   become: yes
-  get_url: url="{{ php.zendguard.pkg_url }}" dest="/usr/lib/php/20131226/"
+  get_url: url="{{ php.zendguard.pkg_url }}" dest="/usr/lib/php/20131226/" timeout=60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
   when: zendGuardArchive.stat.exists == False
 
 - unarchive: src=/usr/lib/php/20131226/zend-loader-php5.6-linux-x86_64.tar.gz dest=/usr/lib/php/20131226/ copy=no

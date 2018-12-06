@@ -6,6 +6,11 @@
     dest: "{{ mailhog.pkg_dest }}"
     sha256sum: "{{ mailhog.pkg_sha256 }}"
     mode: 0755
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Download fixed mhsendmail version
   become: true
@@ -14,6 +19,11 @@
     dest: "{{ mailhog.sendmail_dest }}"
     sha256sum: "{{ mailhog.sendmail_sha256 }}"
     mode: 0755
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Add mailhog start script
   become: yes

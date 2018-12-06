@@ -6,7 +6,11 @@
 
 - name: Download Composer installer
   become: yes
-  get_url: url={{ php.composer.installer_url }} dest=/tmp/composer_installer
+  get_url: url={{ php.composer.installer_url }} dest=/tmp/composer_installer timeout=60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Run composer installer
   become: yes

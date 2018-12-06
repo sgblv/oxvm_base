@@ -10,6 +10,11 @@
       dest: /tmp/firefox.deb
       url: "{{ selenium.package.firefox.deb_url }}"
       checksum: "{{ selenium.package.firefox.deb_checksum }}"
+      timeout: 60
+    register: result
+    until: result is success
+    retries: 5
+    delay: 1
 
   - name: Install fixed firefox version
     become: yes
@@ -50,6 +55,11 @@
       dest: /opt/selenium/selenium.jar
       url: "{{ selenium.package.self.jar_url }}"
       checksum: "{{ selenium.package.self.jar_checksum }}"
+      timeout: 60
+    register: result
+    until: result is success
+    retries: 5
+    delay: 1
 
   - name: Add selenium init script
     become: yes

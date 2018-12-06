@@ -14,6 +14,11 @@
     sha256sum: "{{ adminer_editor.pkg_sha256 }}"
     mode: 0755
     validate_certs: false
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Transfer main entry point of adminer editor
   become: true

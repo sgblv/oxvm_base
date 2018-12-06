@@ -35,3 +35,8 @@
     url: "{{ server.forceless_umount_url }}"
     dest: /bin/umount
     force: yes
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
