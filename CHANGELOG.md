@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.1.2] - Unreleased
+## [2.1.2] - 2018-12-07
 
 ### Changed
 - Remove exact version number from hirak/prestissimo requirement
+- Replace with_items syntax for apt tasks with new packages syntax
+- Always use the present state for apt installation roles except for system packages
+- Add ca-certificates to system packages
+- Introduce timeout of 60 seconds for get_url tasks (overwriting default of 10 seconds)
+- Add 5 retries to get_url tasks
 
 ## [2.1.1] - 2018-11-12
 
