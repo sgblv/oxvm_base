@@ -7,9 +7,9 @@
 
   - name: Download fixed firefox version
     get_url:
-      dest: /tmp/firefox.deb
-      url: "{{ selenium.package.firefox.deb_url }}"
-      checksum: "{{ selenium.package.firefox.deb_checksum }}"
+      dest: /tmp/firefox.tar.bz2
+      url: "{{ selenium.package.firefox.tar_url }}"
+      checksum: "{{ selenium.package.firefox.tar_checksum }}"
       timeout: 60
     register: result
     until: result is success
@@ -18,7 +18,7 @@
 
   - name: Install fixed firefox version
     become: yes
-    shell: "dpkg -i /tmp/firefox.deb && apt-get install -f -y"
+    shell: "cd /tmp && tar xvfj firefox.tar.bz2 && rm -rf /opt/firefox && mv firefox /opt/firefox && ln -sf /opt/firefox/firefox /usr/bin/firefox"
 
   - name: Install dependencies needed for selenium
     become: yes

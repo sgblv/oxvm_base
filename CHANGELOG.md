@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] 
 
-## [2.1.2] - 2018-12-07
-
 ### Added
 - Add PHP extension sqlite3 to installation defaults
+
+### Changed
+- Use Firefox version 31.6.0 ESR instead of 31.0
+
+## [2.1.2] - 2018-12-07
 
 ### Changed
 - Remove exact version number from hirak/prestissimo requirement
