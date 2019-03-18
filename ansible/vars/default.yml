@@ -62,6 +62,7 @@ php:
     - gd
     - curl
     - xml
+    - sqlite3
   version: 7.1
   display_errors: On
   xdebug:
