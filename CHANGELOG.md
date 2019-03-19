@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Use Firefox version 31.6.0 ESR instead of 31.0
 
+### Fixed
+
+- Elasticsearch installation [PR-25](https://github.com/OXID-eSales/oxvm_base/pull/25)
+
 ## [2.1.2] - 2018-12-07
 
 ### Changed
