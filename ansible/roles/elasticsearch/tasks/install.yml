@@ -1,4 +1,20 @@
 ---
+- name: Update apt
+  become: yes
+  apt: update_cache=yes
+
+- name: ensure python-setuptools are up to date
+  become: yes
+  apt:
+    name: python-setuptools
+    state: latest
+
+- name: install python-pip
+  become: yes
+  apt:
+    name: python-pip
+    state: latest
+
 - name: ensure pip is up to date
   become: yes
   pip:
