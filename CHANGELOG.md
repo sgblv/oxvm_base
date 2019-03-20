@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Add PHP extension sqlite3 to installation defaults
+- Introduce MySQL version setting and set '5.7' as default
 
 ### Changed
 - Use Firefox version 31.6.0 ESR instead of 31.0

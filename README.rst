@@ -165,9 +165,19 @@ is deprecated and not available for PHP 7.2, so installation with this package i
 Change MySQL version
 ^^^^^^^^^^^^^^^^^^^^
 
-MySQL versioning is not yet automated via Ansible, in order to change the
-version of MySQL service, please apply the following commands after calling
-``vagrant ssh``:
+By default, MySQL 5.7 version is installed.
+
+If you should need MySQL 5.5 it can be defined in the ``personal.yml`` before building the machine.
+
+.. code:: yaml
+
+  ---
+  mysql:
+    version: '5.5'
+
+
+Alternatively you could use tools like mysql-apt-config to switch to a different MySQL version,
+see example below which you can use after doing ``vagrant ssh``:
 
 .. code:: bash
 

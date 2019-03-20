@@ -46,6 +46,7 @@ apache:
   group: "{{ vagrant_local.vm.app_shared_folder.group }}"
 mysql:
   install: true
+  version: '5.7'
   root_password: '123'
   database: db
   user: user
