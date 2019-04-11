@@ -1,2 +1,5 @@
 ---
 # Override any variable from 'ansible/vars/default.yml'
+php:
+  version: 7.1
+  pcre_jit: 0

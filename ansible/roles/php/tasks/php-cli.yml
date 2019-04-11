@@ -10,3 +10,13 @@
   lineinfile: dest=/etc/php/{{ php.version }}/cli/php.ini
               regexp=';?opcache.enable_cli=\d'
               line='opcache.enable_cli=1'
+
+- name: pcre_jit_cli
+  become: yes
+  when: php.version > 7
+  lineinfile:
+    dest: /etc/php/{{ php.version }}/cli/php.ini
+    regexp: '^pcre.jit ='
+    line: 'pcre.jit = {{ php.pcre_jit }}'
+  notify:
+    - restart apache
